@@ -18,10 +18,19 @@ public class ProgramSDF {
 		Date x1 = new Date();
 		Date x2 = new Date(System.currentTimeMillis());
 		Date x3 = new Date(0L); // L é de long ---- 0 é milissegundos
+		
+		// 1000ms = 1s
+		// 1000ms * 60 para dar 1m
+		// 1000ms * 60 * 60 para dar 1h
+		// 100ms * 60 * 60 * 5 para dar 5 hrs
+		// assim temos uma data 5 horas da manhã do dia 01/01/1970
 		Date x4 = new Date(1000L * 60L * 60L * 5L);
+		
 		
 		Date y1 = sdf1.parse("29/12/2020");
 		Date y2 = sdf2.parse("29/12/2020 09:57:40");
+		
+		//Padrão ISO 8601
 		Date y3 = Date.from(Instant.parse("2020-12-29T09:57:40Z"));
 		
 		System.out.println("x1: " + x1);
